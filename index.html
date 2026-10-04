@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LinkaMate | Social Experiences for Connected Devices</title>
+  <meta name="description" content="LinkaMate develops social experiences for connected and wearable devices.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #090b10;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1150px;
+      margin: auto;
+      padding: 0 30px;
+    }
+
+    .brand {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: #b9bdc8;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 30px 120px;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: #8d72ff;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(50px, 8vw, 90px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      color: #aeb3bf;
+      font-size: 20px;
+      max-width: 650px;
+    }
+
+    .section {
+      border-top: 1px solid #1d2029;
+      padding: 100px 30px;
+    }
+
+    .section-inner {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 42px;
+      letter-spacing: -2px;
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      max-width: 700px;
+      color: #aeb3bf;
+      font-size: 18px;
+      margin-bottom: 50px;
+    }
+
+    .product-card {
+      background: #11141b;
+      border: 1px solid #242936;
+      border-radius: 18px;
+      padding: 40px;
+      max-width: 650px;
+    }
+
+    .product-label {
+      display: inline-block;
+      color: #a992ff;
+      background: #211a3b;
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .product-card h3 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .product-card p {
+      color: #aeb3bf;
+    }
+
+    .contact {
+      color: #aeb3bf;
+      font-size: 18px;
+    }
+
+    .contact a {
+      color: #ffffff;
+    }
+
+    footer {
+      border-top: 1px solid #1d2029;
+      padding: 35px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #777d89;
+      font-size: 13px;
+    }
+
+    .footer-inner a {
+      color: #aeb3bf;
+      text-decoration: none;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        height: 70px;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero {
+        min-height: 520px;
+        padding-top: 60px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="brand">LinkaMate</div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Connected experiences</div>
+
+        <h1>Technology that brings people closer.</h1>
+
+        <p>
+          LinkaMate develops social experiences for connected and wearable
+          devices, creating new ways for people to interact through the
+          technology they use every day.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-inner">
+
+        <h2>Built around connection.</h2>
+
+        <p class="section-description">
+          LinkaMate is an independent software developer focused on creating
+          simple, social and intuitive experiences for connected devices.
+          Our products explore new ways for friends to communicate,
+          interact and stay connected.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-inner">
+
+        <h2>Products</h2>
+
+        <p class="section-description">
+          We're building a family of social applications designed around
+          lightweight, meaningful interaction.
+        </p>
+
+        <div class="product-card">
+
+          <div class="product-label">IN DEVELOPMENT</div>
+
+          <h3>TapMate</h3>
+
+          <p>
+            TapMate is a lightweight social experience for Garmin wearable
+            devices. It allows friends to send simple predefined taps and
+            reactions directly between their connected experiences.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-inner">
+
+        <h2>Contact</h2>
+
+        <p class="contact">
+          Business and development enquiries:<br>
+          <a href="mailto:cody.britton@linkamate.com">
+            cody.britton@linkamate.com
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+
+      <div>© 2026 LinkaMate. All rights reserved.</div>
+
+      <div>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
