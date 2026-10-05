@@ -4,10 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LinkaMate | Social Experiences for Connected Devices</title>
-  <meta name="description" content="LinkaMate develops social experiences for connected and wearable devices.">
+  <title>LinkaMate | Connect. Explore. Together.</title>
+  <meta
+    name="description"
+    content="LinkaMate creates social experiences for connected and wearable devices."
+  >
 
   <style>
+    :root {
+      --primary: #00B2FF;
+      --secondary: #0066FF;
+      --accent: #00E0D6;
+      --background: #0B0F1A;
+      --surface: #111827;
+      --surface-light: #172033;
+      --text: #FFFFFF;
+      --muted: #9CA9BD;
+      --border: rgba(255, 255, 255, 0.09);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,182 +34,463 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #090b10;
-      color: #ffffff;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at 75% 10%, rgba(0, 102, 255, 0.17), transparent 32%),
+        radial-gradient(circle at 20% 35%, rgba(0, 224, 214, 0.08), transparent 28%),
+        var(--background);
+      color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
     }
 
     nav {
-      height: 80px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 15, 26, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      height: 84px;
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 1150px;
-      margin: auto;
-      padding: 0 30px;
+      gap: 30px;
     }
 
     .brand {
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: -1px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 280px;
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      align-items: center;
+      gap: 30px;
     }
 
     .nav-links a {
-      color: #b9bdc8;
+      color: var(--muted);
       text-decoration: none;
       font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: #ffffff;
+      color: var(--primary);
     }
 
     .hero {
-      min-height: 620px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: rgba(0, 178, 255, 0.08);
+      filter: blur(100px);
+      right: -150px;
+      top: 30px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
+      min-height: 690px;
+      margin: auto;
+      padding: 120px 30px 130px;
       display: flex;
       align-items: center;
-      max-width: 1150px;
-      margin: auto;
-      padding: 80px 30px 120px;
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 850px;
     }
 
     .eyebrow {
-      color: #8d72ff;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--primary));
+      border-radius: 10px;
     }
 
     h1 {
-      font-size: clamp(50px, 8vw, 90px);
-      line-height: 0.98;
-      letter-spacing: -4px;
+      max-width: 900px;
+      font-size: clamp(58px, 8vw, 96px);
+      line-height: 0.96;
+      letter-spacing: -5px;
       margin-bottom: 30px;
     }
 
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        var(--accent) 0%,
+        var(--primary) 45%,
+        var(--secondary) 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
     .hero p {
-      color: #aeb3bf;
+      color: var(--muted);
       font-size: 20px;
-      max-width: 650px;
+      max-width: 690px;
+      margin-bottom: 38px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 12px 35px rgba(0, 102, 255, 0.25);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.035);
+      color: white;
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(0, 178, 255, 0.45);
     }
 
     .section {
-      border-top: 1px solid #1d2029;
-      padding: 100px 30px;
+      border-top: 1px solid var(--border);
+      padding: 105px 30px;
     }
 
     .section-inner {
-      max-width: 1150px;
+      max-width: 1180px;
       margin: auto;
     }
 
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 55px;
+    }
+
+    .section-kicker {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
     .section h2 {
-      font-size: 42px;
-      letter-spacing: -2px;
+      font-size: clamp(38px, 5vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -2.5px;
       margin-bottom: 20px;
     }
 
     .section-description {
-      max-width: 700px;
-      color: #aeb3bf;
+      color: var(--muted);
       font-size: 18px;
-      margin-bottom: 50px;
+      max-width: 720px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .value-card {
+      min-height: 210px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.015)
+        );
+    }
+
+    .value-number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 35px;
+    }
+
+    .value-card h3 {
+      font-size: 22px;
+      margin-bottom: 9px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .product-card {
-      background: #11141b;
-      border: 1px solid #242936;
-      border-radius: 18px;
-      padding: 40px;
-      max-width: 650px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(0, 178, 255, 0.24);
+      border-radius: 26px;
+      padding: 52px;
+      background:
+        radial-gradient(
+          circle at 90% 15%,
+          rgba(0, 178, 255, 0.18),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          rgba(17, 24, 39, 0.98),
+          rgba(11, 15, 26, 0.98)
+        );
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.24);
     }
 
     .product-label {
       display: inline-block;
-      color: #a992ff;
-      background: #211a3b;
       padding: 7px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      border-radius: 100px;
+      border: 1px solid rgba(0, 224, 214, 0.2);
+      background: rgba(0, 224, 214, 0.08);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
     }
 
-    .product-card h3 {
-      font-size: 34px;
-      margin-bottom: 12px;
+    .tapmate-title {
+      font-size: clamp(45px, 6vw, 68px);
+      line-height: 1;
+      letter-spacing: -3px;
+      margin-bottom: 5px;
     }
 
-    .product-card p {
-      color: #aeb3bf;
+    .tapmate-by {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
     }
 
-    .contact {
-      color: #aeb3bf;
+    .product-card > p {
+      color: var(--muted);
+      max-width: 700px;
       font-size: 18px;
     }
 
-    .contact a {
-      color: #ffffff;
+    .tap-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 35px;
+      max-width: 650px;
+    }
+
+    .tap {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 30px;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 42px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--surface);
+    }
+
+    .contact-card h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+    }
+
+    .contact-card a {
+      flex-shrink: 0;
     }
 
     footer {
-      border-top: 1px solid #1d2029;
-      padding: 35px 30px;
+      border-top: 1px solid var(--border);
+      padding: 36px 30px;
     }
 
     .footer-inner {
-      max-width: 1150px;
+      max-width: 1180px;
       margin: auto;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      color: #777d89;
+      gap: 25px;
+      color: #748096;
       font-size: 13px;
     }
 
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
     .footer-inner a {
-      color: #aeb3bf;
+      color: #9CA9BD;
       text-decoration: none;
     }
 
+    .footer-inner a:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 850px) {
+      .brand img {
+        width: 210px;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
     @media (max-width: 650px) {
-      nav {
-        height: 70px;
+      .nav-inner {
+        height: auto;
+        min-height: 76px;
+        padding: 13px 20px;
+      }
+
+      .brand img {
+        width: 170px;
       }
 
       .nav-links {
-        gap: 14px;
+        gap: 13px;
       }
 
       .nav-links a {
-        font-size: 12px;
+        font-size: 11px;
+      }
+
+      .nav-links a:nth-child(1),
+      .nav-links a:nth-child(3) {
+        display: none;
+      }
+
+      .hero-inner {
+        min-height: 620px;
+        padding: 90px 22px 100px;
       }
 
       h1 {
-        letter-spacing: -2px;
+        letter-spacing: -3px;
       }
 
-      .hero {
-        min-height: 520px;
-        padding-top: 60px;
+      .hero p {
+        font-size: 18px;
+      }
+
+      .section {
+        padding: 80px 22px;
+      }
+
+      .product-card {
+        padding: 32px 24px;
+      }
+
+      .tap-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .footer-inner {
         flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -203,43 +499,108 @@
 <body>
 
   <nav>
-    <div class="brand">LinkaMate</div>
+    <div class="nav-inner">
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-      <a href="/privacy.html">Privacy</a>
+      <a class="brand" href="#top">
+        <img
+          src="LinkaMate Connection Logo.png"
+          alt="LinkaMate - Connect. Explore. Together."
+        >
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+        <a href="/privacy.html">Privacy</a>
+      </div>
+
     </div>
   </nav>
 
-  <main>
+  <main id="top">
 
     <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">Connected experiences</div>
+      <div class="hero-inner">
 
-        <h1>Technology that brings people closer.</h1>
+        <div class="hero-content">
 
-        <p>
-          LinkaMate develops social experiences for connected and wearable
-          devices, creating new ways for people to interact through the
-          technology they use every day.
-        </p>
+          <div class="eyebrow">Connected experiences</div>
+
+          <h1>
+            Connect.<br>
+            Explore.<br>
+            <span class="gradient-text">Together.</span>
+          </h1>
+
+          <p>
+            LinkaMate creates simple social experiences for connected and
+            wearable devices — new ways to stay close to the people who matter,
+            through the technology already with you.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">
+              Explore TapMate
+            </a>
+
+            <a class="button button-secondary" href="#about">
+              About LinkaMate
+            </a>
+          </div>
+
+        </div>
+
       </div>
     </section>
 
     <section class="section" id="about">
       <div class="section-inner">
 
-        <h2>Built around connection.</h2>
+        <div class="section-heading">
 
-        <p class="section-description">
-          LinkaMate is an independent software developer focused on creating
-          simple, social and intuitive experiences for connected devices.
-          Our products explore new ways for friends to communicate,
-          interact and stay connected.
-        </p>
+          <div class="section-kicker">LinkaMate</div>
+
+          <h2>Technology should bring people closer.</h2>
+
+          <p class="section-description">
+            LinkaMate is an independent software developer building social
+            experiences around connected devices. We focus on lightweight,
+            intuitive interactions that make staying connected feel natural.
+          </p>
+
+        </div>
+
+        <div class="values">
+
+          <div class="value-card">
+            <div class="value-number">01</div>
+            <h3>Simple</h3>
+            <p>
+              Less friction. Fewer steps. Experiences designed to make sense
+              from the first interaction.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-number">02</div>
+            <h3>Social</h3>
+            <p>
+              Technology built around real people, friendships and small
+              moments of connection.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-number">03</div>
+            <h3>Connected</h3>
+            <p>
+              Exploring new ways for phones, wearables and connected devices
+              to work together.
+            </p>
+          </div>
+
+        </div>
 
       </div>
     </section>
@@ -247,24 +608,43 @@
     <section class="section" id="products">
       <div class="section-inner">
 
-        <h2>Products</h2>
+        <div class="section-heading">
 
-        <p class="section-description">
-          We're building a family of social applications designed around
-          lightweight, meaningful interaction.
-        </p>
+          <div class="section-kicker">Our products</div>
+
+          <h2>Small interactions. Real connection.</h2>
+
+          <p class="section-description">
+            We're building a family of products designed around fast,
+            lightweight ways to interact with friends.
+          </p>
+
+        </div>
 
         <div class="product-card">
 
           <div class="product-label">IN DEVELOPMENT</div>
 
-          <h3>TapMate</h3>
+          <h3 class="tapmate-title">
+            Tap<span class="gradient-text">Mate</span>
+          </h3>
+
+          <div class="tapmate-by">By LinkaMate</div>
 
           <p>
-            TapMate is a lightweight social experience for Garmin wearable
-            devices. It allows friends to send simple predefined taps and
-            reactions directly between their connected experiences.
+            TapMate is a social experience for Garmin wearable devices.
+            Choose a friend, choose a tap and send a quick reaction directly
+            from your wrist — no typing required.
           </p>
+
+          <div class="tap-grid" aria-label="TapMate reaction examples">
+            <div class="tap">❤️</div>
+            <div class="tap">👋</div>
+            <div class="tap">😂</div>
+            <div class="tap">🔥</div>
+            <div class="tap">👍</div>
+            <div class="tap">👀</div>
+          </div>
 
         </div>
 
@@ -274,14 +654,22 @@
     <section class="section" id="contact">
       <div class="section-inner">
 
-        <h2>Contact</h2>
+        <div class="contact-card">
 
-        <p class="contact">
-          Business and development enquiries:<br>
-          <a href="mailto:cody.britton@linkamate.com">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h3>Business & development enquiries</h3>
+            <p>Get in touch with LinkaMate.</p>
+          </div>
+
+          <a
+            class="button button-primary"
+            href="mailto:cody.britton@linkamate.com"
+          >
             cody.britton@linkamate.com
           </a>
-        </p>
+
+        </div>
 
       </div>
     </section>
@@ -293,8 +681,9 @@
 
       <div>© 2026 LinkaMate. All rights reserved.</div>
 
-      <div>
+      <div class="footer-links">
         <a href="/privacy.html">Privacy Policy</a>
+        <a href="mailto:cody.britton@linkamate.com">Contact</a>
       </div>
 
     </div>
